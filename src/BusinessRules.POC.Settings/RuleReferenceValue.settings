@@ -1,0 +1,99 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BusinessRules.POC.Settings" GeneratedClassName="RuleReferenceValue">
+  <Profiles />
+  <Settings>
+    <Setting Name="AllowedLARSNotionalNVQLevelv2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">E,1,2</Value>
+    </Setting>
+    <Setting Name="ApprencticeProgAllowedStartDate" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2016-08-01</Value>
+    </Setting>
+    <Setting Name="ApprenticeProgTypes" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2, 3, 20, 21, 2, 23, 25</Value>
+    </Setting>
+    <Setting Name="DD28Criteria2LearnerEmplStatusEmpStats" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10,11,12, 98</Value>
+    </Setting>
+    <Setting Name="DD28Criteria2EmpStatusMonitoringESMType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BSI</Value>
+    </Setting>
+    <Setting Name="DD28Criteria2EmpStatusMonitoringESMCodes" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1,2</Value>
+    </Setting>
+    <Setting Name="DD28Criteria1EMPStats" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">11,12</Value>
+    </Setting>
+    <Setting Name="DD28Criteria1EMPType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BSI</Value>
+    </Setting>
+    <Setting Name="DD28Criteria1ESMCodes" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,4</Value>
+    </Setting>
+    <Setting Name="DD28Criteria3EMPStats" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="DD28Criteria3ESMTypePart1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">EII</Value>
+    </Setting>
+    <Setting Name="DD28Criteria3ESMCodesPart1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="DD28Criteria3ESMTypePart2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BSI</Value>
+    </Setting>
+    <Setting Name="DD28Criteria3ESMCodesPart2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3,4</Value>
+    </Setting>
+    <Setting Name="DD29LearningDeliveryProgType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
+    <Setting Name="DD29LARSCategoryRef" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2,4</Value>
+    </Setting>
+    <Setting Name="LearnDelFam66OlassFamType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LDM</Value>
+    </Setting>
+    <Setting Name="LearnDelFam66OlassFamCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">034</Value>
+    </Setting>
+    <Setting Name="LearnDelFam66RotlFamType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LDM</Value>
+    </Setting>
+    <Setting Name="LearnDelFam66RotlFamCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">328</Value>
+    </Setting>
+    <Setting Name="LearnDelFam66RestartFamType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RES</Value>
+    </Setting>
+    <Setting Name="LearnDelFam66SteelIndRedTrainingFamType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LDM</Value>
+    </Setting>
+    <Setting Name="LearnDelFam66SteelIndRedTrainingFamCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">347</Value>
+    </Setting>
+    <Setting Name="LearnDelFam66RestartFamCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="DD21AllowedFamType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LDM</Value>
+    </Setting>
+    <Setting Name="DD21FamCodeShouldNotBe" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">318</Value>
+    </Setting>
+    <Setting Name="DD21AllowedEmpStats" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">11,12</Value>
+    </Setting>
+    <Setting Name="DD21EmpTypePart1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BSI</Value>
+    </Setting>
+    <Setting Name="DD21EmpCodePart1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="DD21EmpTypePart2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">BSI</Value>
+    </Setting>
+    <Setting Name="DD21EmpCodePart2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

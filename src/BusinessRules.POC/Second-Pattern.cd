@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.LearnDelFAMType66Validator" Collapsed="true">
+    <Position X="10" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAACAAAAAAAAIAAAAAAAAAEAAAgAAAAABAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\LearnDelFAMType66Validator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.SharedRules.LearnerDoBShouldNotBeNullRule">
+    <Position X="8" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SharedRules\LearnerDoBShouldNotBeNullRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.FetchSpecificFundModelsLDsWithLearnStartDate">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\FetchSpecificFundModelsLDsWithLearnStartDate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.PickValidLdsWithAgeLimitFamTypeAndCode">
+    <Position X="11.75" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAACAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\PickValidLdsWithAgeLimitFamTypeAndCode.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.LearnerDelFamExclusionRulesValidator">
+    <Position X="13.5" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\LearnerDelFamExclusionRulesValidator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.RestartLearnerDelFamRule" Collapsed="true">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAgAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\RestartLearnerDelFamRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.OlassLearnerDelFamRule" Collapsed="true">
+    <Position X="11.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\OlassLearnerDelFamRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.RotlLearnerDelFamRule" Collapsed="true">
+    <Position X="13.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAiAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\RotlLearnerDelFamRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.SteelIndustryRedundancyTrainingLearnerDelFamRule">
+    <Position X="8" Y="5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\SteelIndustryRedundancyTrainingLearnerDelFamRule.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.DD07IsYRuleDelFam66" Collapsed="true">
+    <Position X="13.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\DD07IsYRuleDelFam66.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BusinessRules.POC.RuleLearnDelFAMType66.IFetchSpecificFundModelsLDsWithLearnStartDate">
+    <Position X="2.25" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\FetchSpecificFundModelsLDsWithLearnStartDate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.Interfaces.IRule&lt;T&gt;" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.Interfaces.ISharedRule&lt;T, TResult&gt;">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ISharedRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.RuleLearnDelFAMType66.IPickValidLdsWithAgeLimitFamTypeAndCode">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\PickValidLdsWithAgeLimitFamTypeAndCode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.ILearnerDelFam66ExclusionRule">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\LearnerDelFamExclusionRulesValidator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.ILearnerDelFam66ExclusionRuleForFam" Collapsed="true">
+    <Position X="4" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\OlassLearnerDelFamRule.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules.ILearnerDelFam66ExclusionRuleForLearner" Collapsed="true">
+    <Position X="0.75" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RuleLearnDelFAMType66\ExclusionRules\DD07IsYRuleDelFam66.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

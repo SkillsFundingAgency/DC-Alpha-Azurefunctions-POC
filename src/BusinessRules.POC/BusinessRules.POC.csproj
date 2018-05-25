@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D74C4BED-EB9D-4CB1-AC10-3AEC39C11F6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessRules.POC</RootNamespace>
+    <AssemblyName>BusinessRules.POC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.2.1\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Itenso.TimePeriod, Version=2.1.1.0, Culture=neutral, PublicKeyToken=8cb6db75b4e81486, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimePeriodLibrary.NET.2.1.1\lib\net46\Itenso.TimePeriod.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConstants.cs" />
+    <Compile Include="Configuration\AutofacConfig.cs" />
+    <Compile Include="Data\ISharedData.cs" />
+    <Compile Include="Data\SharedData.cs" />
+    <Compile Include="Enums\LearningDeliveryFAMTypes.cs" />
+    <Compile Include="ExternalData\IExternalData.cs" />
+    <Compile Include="ExternalData\LARSCategoryRefData.cs" />
+    <Compile Include="ExternalData\LARSNotionalNVQLevelData.cs" />
+    <Compile Include="Helpers\CustomValidatorExtensions.cs" />
+    <Compile Include="Helpers\IDateHelper.cs" />
+    <Compile Include="Helpers\ListCountValidator.cs" />
+    <Compile Include="Helpers\Range.cs" />
+    <Compile Include="Interfaces\AndRule.cs" />
+    <Compile Include="Interfaces\IResultable.cs" />
+    <Compile Include="Interfaces\IRule.cs" />
+    <Compile Include="Interfaces\ISharedRule.cs" />
+    <Compile Include="Interfaces\IShortRule.cs" />
+    <Compile Include="Interfaces\Myextensions.cs" />
+    <Compile Include="Interfaces\OrRule.cs" />
+    <Compile Include="Interfaces\ValidationResult.cs" />
+    <Compile Include="Models\EmploymentStatusMonitoring.cs" />
+    <Compile Include="Models\Learner.cs" />
+    <Compile Include="Models\LearnerEmploymentStatus.cs" />
+    <Compile Include="Models\LearningDelivery.cs" />
+    <Compile Include="Models\LearningDeliveryFAM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceData\IReferenceData.cs" />
+    <Compile Include="ReferenceData\ReferenceDataFromSettingsFile.cs" />
+    <Compile Include="RuleDOB48\DD04IsInRangeRule.cs" />
+    <Compile Include="RuleDOB48\DD07IsYRule.cs" />
+    <Compile Include="RuleDOB48\DoB48Validator.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ExclusionRules\DD07IsYRuleDelFam66.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ExclusionRules\DD21IsYRule.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ExclusionRules\DD29IsYRule.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ExclusionRules\LearnerDelFamExclusionRulesValidator.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ExclusionRules\OlassLearnerDelFamRule.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ExclusionRules\RestartLearnerDelFamRule.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ExclusionRules\RotlLearnerDelFamRule.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ExclusionRules\SteelIndustryRedundancyTrainingLearnerDelFamRule.cs" />
+    <Compile Include="RuleLearnDelFAMType66\FetchSpecificFundModelsLDsWithLearnStartDate.cs" />
+    <Compile Include="RuleLearnDelFAMType66\LearnDelFAMType66Validator.cs" />
+    <Compile Include="RuleLearnDelFAMType66\PickValidLdsWithAgeLimitFamTypeAndCode.cs" />
+    <Compile Include="RuleLearnDelFAMType66\ValidateLARNotionalNVQLevelRule.cs" />
+    <Compile Include="RuleR105\LearningDeliveryNoOverlappingDatesRule.cs" />
+    <Compile Include="RuleR105\R105PickLdFamActTypes.cs" />
+    <Compile Include="RuleR105\R105Validator.cs" />
+    <Compile Include="SharedRules\DD04Rule.cs" />
+    <Compile Include="SharedRules\DD07Rule.cs" />
+    <Compile Include="SharedRules\DD21\DD21GetLearningDeliveriesWithSpecificEmpStatusMonitoringType.cs" />
+    <Compile Include="SharedRules\DD21\DD21Rule.cs" />
+    <Compile Include="SharedRules\DD28Rule.cs" />
+    <Compile Include="SharedRules\DD28\DD28Criteria1.cs" />
+    <Compile Include="SharedRules\DD28\DD28Criteria3.cs" />
+    <Compile Include="SharedRules\DD28\DD28PickMatchingEmpRecord.cs" />
+    <Compile Include="SharedRules\DD28\DD28RuleCriteria2.cs" />
+    <Compile Include="Models\DD28SubModel.cs" />
+    <Compile Include="SharedRules\DD29\DD29Rule.cs" />
+    <Compile Include="SharedRules\LearnerDoBShouldNotBeNullRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="PrivateSettings.config" />
+    <None Include="RulesClassDiagram.cd" />
+    <None Include="Second-Pattern.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ErrorMessages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessRules.POC.Settings\BusinessRules.POC.Settings.csproj">
+      <Project>{ece40071-3278-41a3-ae23-bf9dfb5190c3}</Project>
+      <Name>BusinessRules.POC.Settings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
