@@ -1,23 +1,16 @@
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.IO;
-using System.Xml;
-
 namespace FunctionApp1
 {
+    using System.IO;
+    using System.Xml;
+    using System.Xml.Serialization;
+    using Microsoft.Azure.WebJobs;
+
     public static class XmlDeserialiserAT
     {
         [FunctionName("XmlDeserialiser")]
         public static BusinessRules.CustomersData Run([ActivityTrigger] DurableActivityContext context)
         {
-            //log.Info("C# HTTP trigger function processed a request.");
+            // log.Info("C# HTTP trigger function processed a request."); -
 
             #region xmlstring
 
@@ -220,9 +213,8 @@ namespace FunctionApp1
                 return result;
             }
 
-            //BusinessRules.IXmlDeserialiser xmlDeserialiser = new BusinessRules.XmlDeserializer();
-            //return xmlDeserialiser.DeserializeXmlStringToObject<BusinessRules.catalog>(xmlString);
-    
+            // BusinessRules.IXmlDeserialiser xmlDeserialiser = new BusinessRules.XmlDeserializer(); -
+            // return xmlDeserialiser.DeserializeXmlStringToObject<BusinessRules.catalog>(xmlString); -
         }
     }
 }

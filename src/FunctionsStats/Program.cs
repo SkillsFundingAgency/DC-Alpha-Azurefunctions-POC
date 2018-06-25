@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-using Microsoft.Azure; // Namespace for CloudConfigurationManager
+// Namespace for CloudConfigurationManager
 using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
 using Microsoft.WindowsAzure.Storage.Table; // Namespace for Table storage types
 using System.Configuration;
@@ -16,7 +15,6 @@ namespace FunctionsStats
     {
         static void Main(string[] args)
         {
-            
             // Parse the connection string and return a reference to the storage account.
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 ConfigurationManager.AppSettings["StorageConnectionString"]);
@@ -29,21 +27,16 @@ namespace FunctionsStats
 
             while (true)
             {
-
-
-
                 ConcurrentDictionary<string, DateTime?> partitionKeys = new ConcurrentDictionary<string, DateTime?>();
                 Parallel.ForEach(table.ExecuteQuery(new TableQuery()), entity =>
                 {
                     partitionKeys.TryAdd(entity.PartitionKey, entity.Properties["_Timestamp"].DateTime);
                 });
 
-
                 var stats = new Dictionary<string, TimeSpan>();
 
                 foreach (var partitionKey in partitionKeys.OrderBy(x=>x.Value))
                 {
-
                     table = tableClient.GetTableReference("DurableFunctionsHubHistory");
 
                     // Construct the query operation for all customer entities where PartitionKey="Smith".
@@ -82,10 +75,9 @@ namespace FunctionsStats
 
                 foreach (var item in stats)
                 {
-
                     Console.WriteLine(item.Key + ",       " + item.Value.Seconds + ",             " + item.Value.Milliseconds);
-
                 }
+
                 Console.WriteLine("**************************************");
                 Console.ReadLine();
                 //// Print the fields for each customer.
@@ -111,8 +103,6 @@ namespace FunctionsStats
             public string Input { get; set; }
             public string Result { get; set; }
             public string OrchestrationStatus { get; set; }
-
-
         }
     }
 }

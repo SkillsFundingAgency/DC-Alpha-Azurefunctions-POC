@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -23,13 +22,14 @@ namespace FunctionApp1
 
             log.Info($"Started orchestration with ID = '{instanceId}'.");
             var status = await starter.GetStatusAsync(instanceId);
-            while (status == null || status.Output == null)
+            while (status?.Output == null)
             {
                 status = await starter.GetStatusAsync(instanceId);
             }
+
             return req.CreateResponse(HttpStatusCode.OK, status.Output);
 
-            //return starter.CreateCheckStatusResponse(req, instanceId);
+            // return starter.CreateCheckStatusResponse(req, instanceId); -
         }
     }
 }

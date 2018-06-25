@@ -1,4 +1,3 @@
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -21,8 +20,6 @@ namespace FunctionApp1
             {
                 IsValid = true,
                 RuleName = "Rule2"
-
-
             };
 
             return req.CreateResponse(HttpStatusCode.OK, result);

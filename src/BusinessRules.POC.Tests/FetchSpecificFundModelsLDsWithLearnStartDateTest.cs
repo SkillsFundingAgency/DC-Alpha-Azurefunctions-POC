@@ -1,13 +1,9 @@
-﻿using BusinessRules.POC.Data;
-using BusinessRules.POC.Models;
+﻿using BusinessRules.POC.Models;
 using BusinessRules.POC.ReferenceData;
 using BusinessRules.POC.RuleLearnDelFAMType66;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace BusinessRules.POC.Tests
@@ -50,13 +46,11 @@ namespace BusinessRules.POC.Tests
 
             Assert.Empty(actual);
         }
-
-
+        
         [Fact]
         [Trait("Category", "LearnDelFAMType66-Rule")]
         public void FundModel35_Returns_OneItemList()
         {
-
             var parameter = new Learner()
             {
                 LearningDeliveries = new List<LearningDelivery>()

@@ -1,9 +1,7 @@
-﻿using System;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Collections.Concurrent;
 
 namespace BusinessRules
 {
@@ -11,13 +9,12 @@ namespace BusinessRules
     {
         public List<RuleResponse> Execute(CustomersData data)
         {
-            var result = new ConcurrentDictionary<int, BusinessRules.RuleResponse>();
-            Parallel.For(0, data.TotalCount, (index) =>
+            var result = new ConcurrentDictionary<int, RuleResponse>();
+            Parallel.For(0, data.TotalCount, index =>
             {
-               
                 // parse query parameter
                 Task.Delay(10);
-                result.TryAdd(index, new BusinessRules.RuleResponse()
+                result.TryAdd(index, new RuleResponse
                 {
                     IsValid = true,
                     RuleName = "Rule2",
@@ -26,8 +23,6 @@ namespace BusinessRules
             });
 
             return result.Select(x=> x.Value).ToList();
-          
-
         }
     }
 }

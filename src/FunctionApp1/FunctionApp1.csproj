@@ -2,9 +2,16 @@
   <PropertyGroup>
     <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>FunctionApp1.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>FunctionApp1.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>    
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.DurableTask" Version="1.0.0-beta" />    
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.6" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.6" />    
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessRules\BusinessRules.csproj" />

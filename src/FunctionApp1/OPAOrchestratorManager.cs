@@ -1,10 +1,5 @@
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
 using System.Collections.Generic;
 
 namespace FunctionApp1
@@ -15,34 +10,26 @@ namespace FunctionApp1
         public static async Task<List<BusinessRules.RuleResponse>> Run(
             [OrchestrationTrigger] DurableOrchestrationContext context)
         {
-
             var data = await context.CallActivityAsync<BusinessRules.CustomersData>("XmlDeserialiser");
-
-
             var tasks = new List<Task<List<BusinessRules.RuleResponse>>>();
+            var firstOrchestratorTask = context.CallSubOrchestratorAsync<List<BusinessRules.RuleResponse>>("OPARuleOrchestrator");
+            var secondOrchestratorTask = context.CallSubOrchestratorAsync<List<BusinessRules.RuleResponse>>("OPAOrchestrator2");
 
-           
+            tasks.Add(firstOrchestratorTask);
+            tasks.Add(secondOrchestratorTask);
 
+            var result1 = await firstOrchestratorTask;
+            // var result2 =  await secondOrchestratorTask; -
 
-                var firstOrchestratorTask = context.CallSubOrchestratorAsync<List<BusinessRules.RuleResponse>>("OPARuleOrchestrator");
-                var secondOrchestratorTask = context.CallSubOrchestratorAsync<List<BusinessRules.RuleResponse>>("OPAOrchestrator2");
-
-                tasks.Add(firstOrchestratorTask);
-                tasks.Add(secondOrchestratorTask);
-
-               var result1 = await firstOrchestratorTask;
-            //   var result2 =  await secondOrchestratorTask;
-
-            // result1.AddRange(result2);
-            // return result1;
+            // result1.AddRange(result2); -
+            // return result1; -
             return result1;
 
+            // await Task.WhenAll(tasks); -
 
-            // await Task.WhenAll(tasks);
+            // var resultFromOrchestrators = tasks.Select(x=> x.Result).ToList(); -
 
-            // var resultFromOrchestrators = tasks.Select(x=> x.Result).ToList();
-
-            // var result = new List<BusinessRules.RuleResponse>();
+            // var result = new List<BusinessRules.RuleResponse>(); -
             //foreach (var item in resultFromOrchestrators)
             // {
             //     result.AddRange(item);
@@ -50,9 +37,7 @@ namespace FunctionApp1
 
             // return result;
 
-          //  return null;
-
-            //return null;
+            // return null;
         }
     }
 }

@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Async;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -26,7 +24,6 @@ namespace ConsoleJobManager
             using (var client = new HttpClient())
             {
                 Stopwatch sw = new Stopwatch();
-               
 
                 var learnersTasks = new List<List<Task<HttpResponseMessage>>>();
 
@@ -36,9 +33,6 @@ namespace ConsoleJobManager
                 int.TryParse(readFromUser, out totalLearners);
 
                 Console.WriteLine("Request Process Started!");
-
-
-                
 
                 var allReqts = new ConcurrentDictionary<Guid, List<HttpRequestMessage>>();
 
@@ -59,7 +53,6 @@ namespace ConsoleJobManager
                      allReqts.TryAdd(Guid.NewGuid(), tasksPerLearner);
                            
                      //learnersTasks.Add(tasksForUser);
-                     
                  });
 
                 //for (int i = 0; i < totalLearners; i++)
@@ -68,17 +61,14 @@ namespace ConsoleJobManager
                 //    {
                 //        reqsListNotThreadSafe.Add(CreateRequestObject());
                 //    }
-
                 //}
-
 
                 try
                 {
-
                     sw.Start();
 
                     Console.WriteLine("Request waiting for the learners tasks to complete! - Total requests: " + allReqts.Count() );
-                    //Parallel.ForEach(learnersTasks, async (tasks) => await Task.WhenAll(tasks));
+                    // Parallel.ForEach(learnersTasks, async (tasks) => await Task.WhenAll(tasks));
 
                     // await learnersTasks.ParallelForEachAsync(async tasks => await Task.WhenAll(tasks));
                     var reqList = reqs.Select(x => x.Value).ToList();
@@ -88,7 +78,7 @@ namespace ConsoleJobManager
                         responses.AddRange(await item.Value.DownloadAsync(1000));
                     };
 
-                   // var responses = await reqList.DownloadAsync(1000);
+                    // var responses = await reqList.DownloadAsync(1000);
 
                     //await Task.WhenAll(allTasks.ToList().Select(x=>x.Value));
                     //foreach (var tasks in learnersTasks)
@@ -96,21 +86,18 @@ namespace ConsoleJobManager
                     //    await Task.WhenAll(tasks);
                     //}
 
-
                     sw.Stop();
                     // var result1 = responses[0];
 
 
-                   // Console.WriteLine("Total requests with success status:" + responses.Count(x => x.IsSuccessStatusCode));
-                //    Console.WriteLine("Total requests with Error status:" + responses.Count(x => !x.IsSuccessStatusCode));
-
-
+                    // Console.WriteLine("Total requests with success status:" + responses.Count(x => x.IsSuccessStatusCode));
+                    //    Console.WriteLine("Total requests with Error status:" + responses.Count(x => !x.IsSuccessStatusCode));
+                    
                     // result.ForEach(x => Console.WriteLine(x.ToString()));
                     Console.WriteLine("Request Completed for all learners!");
                     Console.WriteLine("Time it took - in seconds: " + sw.Elapsed + " , in milliseconds: " + sw.ElapsedMilliseconds);
 
                     return null;
-
                 }
                 catch (Exception ex)
                 {
@@ -121,15 +108,8 @@ namespace ConsoleJobManager
                 }
 
                 return null;
-
-
-              
             }
-
-            
         }
-
-      
 
         public HttpRequestMessage CreateRequestObject()
         {
@@ -142,13 +122,13 @@ namespace ConsoleJobManager
             };
 
             request.Headers.Add("x-functions-key", "qZwaXP1SL31HvpvGV5QtlX5HpLw5oiipTjJWzehLFxGGeKd6VAR4eA==");
-            //request.Headers.Add("x-functions-key", "JFrswP8sSv6pVlDV97wL0LHXcLkXzMiVYoz4Wwz7kla6u2ZeUp5wYQ==");
+            // request.Headers.Add("x-functions-key", "JFrswP8sSv6pVlDV97wL0LHXcLkXzMiVYoz4Wwz7kla6u2ZeUp5wYQ==");
             
             return request;
         }
     }
 
-    public static class exten
+    public static class Exten
     {
 
         public static async Task<List<HttpResponseMessage>> DownloadAsync(this List<HttpRequestMessage> reqs, int maxDownloads)
@@ -156,29 +136,30 @@ namespace ConsoleJobManager
             var concurrentQueue = new ConcurrentQueue<HttpResponseMessage>();
 
             using (var semaphore = new SemaphoreSlim(maxDownloads))
-            using (var httpClient = new HttpClient())
             {
-                httpClient.Timeout =  TimeSpan.FromMinutes(15);
-                var tasks = reqs.Select(async (req) =>
+                using (var httpClient = new HttpClient())
                 {
-                    await semaphore.WaitAsync();
-                    try
+                    httpClient.Timeout =  TimeSpan.FromMinutes(15);
+                    var tasks = reqs.Select(async (req) =>
                     {
-                        var data = await httpClient.SendAsync(req);
-                         concurrentQueue.Enqueue(data);
-                       
-                    }
-                    finally
-                    {
-                        semaphore.Release();
-                    }
-                });
+                        await semaphore.WaitAsync();
+                        try
+                        {
+                            var data = await httpClient.SendAsync(req);
+                             concurrentQueue.Enqueue(data);
+                           
+                        }
+                        finally
+                        {
+                            semaphore.Release();
+                        }
+                    });
 
-                await Task.WhenAll(tasks.ToArray());
+                    await Task.WhenAll(tasks.ToArray());
+                }
             }
+
             return concurrentQueue.ToList();
         }
-
     }
-
 }

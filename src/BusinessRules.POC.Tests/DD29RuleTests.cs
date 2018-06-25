@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BusinessRules.POC.ExternalData;
 using BusinessRules.POC.Models;
 using BusinessRules.POC.ReferenceData;
 using BusinessRules.POC.SharedRules.DD29;
 using Moq;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace BusinessRules.POC.Tests
 {
@@ -17,7 +13,6 @@ namespace BusinessRules.POC.Tests
     {
         public DD29RuleTests()
         {
-                
         }
 
         [Fact]

@@ -6,9 +6,6 @@ using BusinessRules.POC.RuleDOB48;
 using BusinessRules.POC.SharedRules;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace BusinessRules.POC.Tests
@@ -88,12 +85,8 @@ namespace BusinessRules.POC.Tests
                         DateOfBirth = dob,
                         LearnStartDate = new DateTime(2012, 08, 21)
                     }
-
                 }
-
             };
-
-
 
             //act
             var results = _dob48Validator.Validate(ldObj);
@@ -166,12 +159,8 @@ namespace BusinessRules.POC.Tests
                         DateOfBirth = dob,
                         LearnStartDate = new DateTime(2012, 08, 21)
                     }
-
                 }
-
             };
-
-
 
             //act
             var results = _dob48Validator.Validate(ldObj);
@@ -179,7 +168,6 @@ namespace BusinessRules.POC.Tests
             //assert
             Assert.True(results.IsValid);
         }
-
 
         [Trait("Category", "DoB48-Rule")]
         [Fact]
@@ -245,12 +233,8 @@ namespace BusinessRules.POC.Tests
                         DateOfBirth = dob,
                         LearnStartDate = new DateTime(2005, 08, 21)
                     }
-
                 }
-
             };
-
-
 
             //act
             var results = _dob48Validator.Validate(ldObj);

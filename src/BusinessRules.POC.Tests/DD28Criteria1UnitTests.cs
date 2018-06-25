@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessRules.POC.Interfaces;
+﻿using System.Collections.Generic;
 using BusinessRules.POC.Models;
 using BusinessRules.POC.ReferenceData;
 using BusinessRules.POC.SharedRules.DD28;
@@ -14,7 +9,7 @@ namespace BusinessRules.POC.Tests
 {
     public class DD28Criteria1UnitTests
     {
-        private Mock<IReferenceData<string, string>> _mock;
+        private readonly Mock<IReferenceData<string, string>> _mock;
 
         public DD28Criteria1UnitTests()
         {
@@ -35,10 +30,7 @@ namespace BusinessRules.POC.Tests
             var dd28EmpStatTypeCode11Rule = new DD28Criteria1(_mock.Object);
             var param = new DD28SubModel()
             {
-                LearningDeliveryObject = new LearningDelivery()
-                {
-
-                },
+                LearningDeliveryObject = new LearningDelivery(),
                 LearnerEmploymentStatusObj = new List<LearnerEmploymentStatus>()
                 {
                     new LearnerEmploymentStatus()
@@ -71,10 +63,7 @@ namespace BusinessRules.POC.Tests
             var dd28EmpStatTypeCode11Rule = new DD28Criteria1(_mock.Object);
             var param = new DD28SubModel()
             {
-                LearningDeliveryObject = new LearningDelivery()
-                {
-
-                },
+                LearningDeliveryObject = new LearningDelivery(),
                 LearnerEmploymentStatusObj = new List<LearnerEmploymentStatus>() { 
                     new LearnerEmploymentStatus()
                     {
@@ -111,10 +100,7 @@ namespace BusinessRules.POC.Tests
             var dd28EmpStatTypeCode11Rule = new DD28Criteria1(_mock.Object);
             var param = new DD28SubModel()
             {
-                LearningDeliveryObject = new LearningDelivery()
-                {
-
-                },
+                LearningDeliveryObject = new LearningDelivery(),
                 LearnerEmploymentStatusObj = new List<LearnerEmploymentStatus>()
                 {
                     new LearnerEmploymentStatus()

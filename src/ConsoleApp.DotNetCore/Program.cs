@@ -1,8 +1,4 @@
-﻿using Autofac;
-using System;
-using Autofac.Extensions.DependencyInjection;
-
-namespace ConsoleApp.DotNetCore
+﻿namespace ConsoleApp.DotNetCore
 {
     class Program
     {
@@ -39,7 +35,6 @@ namespace ConsoleApp.DotNetCore
           //  // binding directly to Autofac.
           //  var container = containerBuilder.Build();
           //  var serviceProvider = new AutofacServiceProvider(container);
-
         }
     }
 }

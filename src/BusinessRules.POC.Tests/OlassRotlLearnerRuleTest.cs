@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusinessRules.POC.Models;
+﻿using BusinessRules.POC.Models;
 using BusinessRules.POC.ReferenceData;
 using BusinessRules.POC.RuleLearnDelFAMType66.ExclusionRules;
 using Moq;
@@ -15,7 +10,6 @@ namespace BusinessRules.POC.Tests
     {
         public OlassLearnerRuleTests()
         {
-                
         }
 
         [Fact]
@@ -25,7 +19,6 @@ namespace BusinessRules.POC.Tests
             //arrange
             var rule = new OlassLearnerDelFamRule(new ReferenceDataFromSettingsFile());
 
-
             //act
             var actual = rule.Evaluate(new LearningDeliveryFAM()
             {
@@ -33,10 +26,10 @@ namespace BusinessRules.POC.Tests
                 LearnDelFAMType = "LDM"
 
             });
+
             //assert
 
             Assert.True(actual);
-
         }
 
         [Fact]
@@ -46,7 +39,6 @@ namespace BusinessRules.POC.Tests
             //arrange
             var rule = new OlassLearnerDelFamRule(new ReferenceDataFromSettingsFile());
 
-
             //act
             var actual = rule.Evaluate(new LearningDeliveryFAM()
             {
@@ -54,10 +46,10 @@ namespace BusinessRules.POC.Tests
                 LearnDelFAMType = "Dum"
 
             });
+
             //assert
 
             Assert.False(actual);
-
         }
 
         [Fact]
@@ -67,18 +59,15 @@ namespace BusinessRules.POC.Tests
             //arrange
             var rule = new OlassLearnerDelFamRule(new ReferenceDataFromSettingsFile());
 
-
             //act
             var actual = rule.Evaluate(new LearningDeliveryFAM()
             {
                 LearnDelFAMCode = "039",
                 LearnDelFAMType = "LDM"
-
             });
+
             //assert
-
             Assert.False(actual);
-
         }
 
         [Fact]
@@ -90,18 +79,13 @@ namespace BusinessRules.POC.Tests
             refDataMock.Setup(x => x.Get(It.Is<string>(p => p == AppConstants.LearnDelFam66OlassFamCode))).Returns("");
             refDataMock.Setup(x => x.Get(It.Is<string>(p => p == AppConstants.LearnDelFam66OlassFamType))).Returns("");
 
-
             var rule = new OlassLearnerDelFamRule(refDataMock.Object);
-
 
             //act
             var actual = rule.Evaluate(null);
+            
             //assert
-
             Assert.False(actual);
-
         }
-
-
     }
 }

@@ -1,13 +1,9 @@
 ﻿using BusinessRules.POC.Helpers;
-using BusinessRules.POC.Interfaces;
 using BusinessRules.POC.Models;
 using BusinessRules.POC.RuleLearnDelFAMType66;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace BusinessRules.POC.Tests
@@ -18,9 +14,6 @@ namespace BusinessRules.POC.Tests
 
         public CheckAgeLimitAndFAMTypeAndCodeUnitTests()
         {
-           
-
-
         }
 
         [Fact]
@@ -51,7 +44,6 @@ namespace BusinessRules.POC.Tests
                     }
                 }
             };
-
 
             var actual = _rule.Evaluate(parameter);
             Assert.Empty(actual);
@@ -86,12 +78,10 @@ namespace BusinessRules.POC.Tests
                     }
                 }
             };
-
-
+            
             var actual = _rule.Evaluate(parameter);
             Assert.NotEmpty(actual);
             Assert.Single(actual);
-
         }
 
         [Trait("Category", "LearnDelFAMType66-Rule")]
@@ -122,12 +112,9 @@ namespace BusinessRules.POC.Tests
                     }
                 }
             };
-
-
+            
             var actual = _rule.Evaluate(parameter);
             Assert.Empty(actual);
         }
-
-
     }
 }

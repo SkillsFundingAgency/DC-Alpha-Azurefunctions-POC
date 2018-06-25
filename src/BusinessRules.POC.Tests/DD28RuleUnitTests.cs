@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
 using BusinessRules.POC.Interfaces;
 using BusinessRules.POC.Models;
 using BusinessRules.POC.SharedRules;
 using BusinessRules.POC.SharedRules.DD28;
-using Microsoft.WindowsAzure.Storage.Blob.Protocol;
 using Moq;
 using Xunit;
 
@@ -18,7 +13,6 @@ namespace BusinessRules.POC.Tests
     {
         public DD28RuleUnitTests()
         {
-            
         }
 
         [Fact]
@@ -55,7 +49,7 @@ namespace BusinessRules.POC.Tests
                 new List<IDD28RuleCriteria>() {dd28Criteria1Mock.Object, dd28Criteria2Mock.Object,
             dd28Criteria3Mock.Object });
 
-        var learner = new Learner()
+            var learner = new Learner()
             {
                 LearnerEmploymentStatuses = new List<LearnerEmploymentStatus>()
                 {
@@ -169,17 +163,12 @@ namespace BusinessRules.POC.Tests
             var dd28ruleObj = new DD28Rule(dd28PickMatchingEmpRecordMock.Object,
                 new List<IDD28RuleCriteria>() {dd28Criteria1Mock.Object, dd28Criteria2Mock.Object,
                     dd28Criteria3Mock.Object });
-
-
-
+            
             //act
             var actual = dd28ruleObj.Evaluate(learner);
 
             //assert 
             Assert.Equal("Y", actual);
         }
-
-
-        
     }
 }

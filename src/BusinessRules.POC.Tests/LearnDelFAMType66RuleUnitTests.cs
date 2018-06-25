@@ -4,9 +4,6 @@ using BusinessRules.POC.RuleLearnDelFAMType66;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Autofac;
 using BusinessRules.POC.Configuration;
 using BusinessRules.POC.Enums;
@@ -22,14 +19,12 @@ namespace BusinessRules.POC.Tests
 
         public LearnDelFAMType66RuleUnitTests()
         {
-
         }
 
         [Trait("Category", "LearnDelFAMType66-Rule")]
         [Fact]
         public void LearnDelFAMType66AgeLessThan24ReturnsTrue()
         {
-
             //arrange
             var learnerDobNotNullMock = new Mock<ISharedRule<Learner, bool>>();
             learnerDobNotNullMock.Setup(x => x.Evaluate(It.IsAny<Learner>()))
@@ -40,9 +35,6 @@ namespace BusinessRules.POC.Tests
                 .Returns(new List<LearningDelivery>()
             {
                 new LearningDelivery()
-                {
-
-                }
             });
 
             var checkAgeLimitMock = new Mock<IPickValidLdsWithAgeLimitFamTypeAndCode>();
@@ -57,18 +49,15 @@ namespace BusinessRules.POC.Tests
             //act
             var actual = validator.Validate(new Learner());
 
-
             //assert
             Assert.NotNull(actual);
             Assert.True(actual.IsValid);
-
         }
 
         [Fact]
         [Trait("Category", "LearnDelFAMType66-Rule")]
         public void LearnDelFAMType66_LDsFundModelIsNot35_ReturnsTrue()
         {
-
             //arrange
             var learnerDobNotNullMock = new Mock<ISharedRule<Learner, bool>>();
             learnerDobNotNullMock.Setup(x => x.Evaluate(It.IsAny<Learner>()))
@@ -90,20 +79,15 @@ namespace BusinessRules.POC.Tests
             //act
             var actual = validator.Validate(new Learner());
 
-
             //assert
             Assert.NotNull(actual);
             Assert.True(actual.IsValid);
-
         }
-
-       
 
         [Trait("Category", "LearnDelFAMType66-Rule")]
         [Fact]
         public void LearnersAgeLessthan25_ReturnsTrue()
         {
-
             //arrange
             var learnerDobNotNullMock = new Mock<ISharedRule<Learner, bool>>();
             learnerDobNotNullMock.Setup(x => x.Evaluate(It.IsAny<Learner>()))
@@ -125,18 +109,15 @@ namespace BusinessRules.POC.Tests
             //act
             var actual = validator.Validate(new Learner());
 
-
             //assert
             Assert.NotNull(actual);
             Assert.True(actual.IsValid);
-
         }
 
         [Trait("Category", "LearnDelFAMType66-Rule")]
         [Fact]
         public void LearnersAgeGreaterThan25_And_LARsNVQ_Valid_ReturnsFalse()
         {
-
             //arrange
             var learnerDobNotNullMock = new Mock<ISharedRule<Learner, bool>>();
             learnerDobNotNullMock.Setup(x => x.Evaluate(It.IsAny<Learner>()))
@@ -164,18 +145,15 @@ namespace BusinessRules.POC.Tests
             //act
             var actual = validator.Validate(new Learner());
 
-
             //assert
             Assert.NotNull(actual);
             Assert.False(actual.IsValid);
-
         }
 
         [Trait("Category", "LearnDelFAMType66-Rule")]
         [Fact]
         public void LearnersAgeGreaterThan25_And_LARsNVQ_Valid_WithIoC_ReturnsFalse()
         {
-
             //arrange
             if(_container == null) ConfigureIoCContainer();
             using (var scope = _container.BeginLifetimeScope())
@@ -222,12 +200,9 @@ namespace BusinessRules.POC.Tests
                     }
                 });
 
-
                 //assert
                 Assert.NotNull(actual);
                 Assert.False(actual.IsValid);
-
-
             }
         }
 
@@ -237,8 +212,6 @@ namespace BusinessRules.POC.Tests
             builder.RegisterModule<BusinessLogicAutofacModule>();
             _container = builder.Build();
             _scope = _container.BeginLifetimeScope();
-
         }
-
     }
 }

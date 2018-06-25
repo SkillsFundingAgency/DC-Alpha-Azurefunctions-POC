@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BusinessRules
+﻿namespace BusinessRules
 {
     public class Rule1 : IRule
     {
@@ -32,7 +26,6 @@ namespace BusinessRules
                 IsValid = isValid,
                 RuleName = "Rule1"
             };
-
         }
     }
 }

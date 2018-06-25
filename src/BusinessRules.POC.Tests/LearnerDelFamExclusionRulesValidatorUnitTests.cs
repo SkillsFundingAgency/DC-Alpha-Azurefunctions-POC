@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Autofac;
 using BusinessRules.POC.Configuration;
 using BusinessRules.POC.Models;
@@ -160,7 +157,6 @@ namespace BusinessRules.POC.Tests
 
                 ILearnerDelFam66ExclusionRule learnerDelFam66ExclusionRule =
                     new LearnerDelFamExclusionRulesValidator(learnDelFamExclusionRulesObj, learnerExclusionRulesObj);
-
                 
                 //act
                 var actual = learnerDelFam66ExclusionRule.Evaluate(new Learner()
@@ -199,7 +195,6 @@ namespace BusinessRules.POC.Tests
             var learnDelFamExclusionRulesMock = new Mock<ILearnerDelFam66ExclusionRuleForFam>();
             learnDelFamExclusionRulesMock.Setup(x => x.Evaluate(It.IsAny<LearningDeliveryFAM>())).Returns(false);
 
-
             ILearnerDelFam66ExclusionRule learnerDelFam66ExclusionRule =
                 new LearnerDelFamExclusionRulesValidator(
                     new List<ILearnerDelFam66ExclusionRuleForFam>() {learnDelFamExclusionRulesMock.Object},
@@ -217,8 +212,6 @@ namespace BusinessRules.POC.Tests
             var builder = new ContainerBuilder();
             builder.RegisterModule<BusinessLogicAutofacModule>();
             _container = builder.Build();
-
         }
-
     }
 }

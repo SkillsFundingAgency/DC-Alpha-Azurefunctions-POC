@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace BusinessRules
@@ -17,8 +13,6 @@ namespace BusinessRules
         public int price { get; set; }
         public int publish_data { get; set; }
         public int description { get; set; }
-       
-
     }
 
     public class catalog
@@ -39,8 +33,6 @@ namespace BusinessRules
         }
 
         public int TotalCount { get; set; }
-
-
     }
 
     public class Customer

@@ -1,12 +1,7 @@
 ﻿using BusinessRules.POC.RuleR105;
-using Itenso.TimePeriod;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
-using FluentValidation;
 using BusinessRules.POC.Models;
 
 namespace BusinessRules.POC.Tests
@@ -76,9 +71,7 @@ namespace BusinessRules.POC.Tests
                     }
                 }
             };
-
             
-
             //act
             var results = _r105RuleValidator.Validate(learner);
             
@@ -134,8 +127,6 @@ namespace BusinessRules.POC.Tests
                 }
             };
 
-
-
             //act
             var results = _r105RuleValidator.Validate(ldObj);
 
@@ -172,9 +163,7 @@ namespace BusinessRules.POC.Tests
                                 LearnDelFAMDateFrom = new DateTime(2017, 11, 5),
                                 LearnDelFAMDateTo = new DateTime(2017, 11, 5)
                             }
-
                         }
-
                     },
                     new LearningDelivery()
                     {
@@ -196,7 +185,6 @@ namespace BusinessRules.POC.Tests
                                 LearnDelFAMDateFrom = new DateTime(2017, 10, 5),
                                 LearnDelFAMDateTo = new DateTime(2017, 11, 5)
                             }
-
                         }
                     }
                 }
@@ -257,8 +245,6 @@ namespace BusinessRules.POC.Tests
                 }
             };
 
-
-
             //act
             var results = _r105RuleValidator.Validate(ldObj);
 
@@ -299,8 +285,6 @@ namespace BusinessRules.POC.Tests
                     }
                 }
             };
-
-
 
             //act
             var results = _r105RuleValidator.Validate(ldObj);
@@ -343,15 +327,11 @@ namespace BusinessRules.POC.Tests
                 }
             };
 
-
-
             //act
             var results = _r105RuleValidator.Validate(ldObj);
 
             //assert
             Assert.True(results.IsValid);
         }
-
-
     }
 }

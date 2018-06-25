@@ -1,9 +1,6 @@
 ﻿using BusinessRules.POC.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 using System.Collections;
 
@@ -11,7 +8,7 @@ namespace BusinessRules.POC.Tests
 {
     public class DateHelperUnitTests
     {
-        private IDateHelper _dateHelper;
+        private readonly IDateHelper _dateHelper;
 
         public DateHelperUnitTests()
         {
@@ -58,11 +55,7 @@ namespace BusinessRules.POC.Tests
         {
             var actualYear = _dateHelper.GetYearInWhichPersonTurnsTo(ageTurningTo, doB);
             Assert.Equal(expectedYear, actualYear);
-
         }
-
-
-
     }
 
     public class CalAgeTestDataGenerator : IEnumerable<object[]>
@@ -71,14 +64,12 @@ namespace BusinessRules.POC.Tests
         {
             new object[] { new DateTime(2017,12,01), new DateTime(1982,10,01), 35 },
             new object[] { new DateTime(2017,10,01), new DateTime(1982,11,01), 34 }
-
         };
 
         public IEnumerator<object[]> GetEnumerator() 
         {
             return _data.GetEnumerator();
         }
-
      
         IEnumerator IEnumerable.GetEnumerator()
         {
@@ -92,7 +83,6 @@ namespace BusinessRules.POC.Tests
         {
             new object[] { 35, new DateTime(1982,10,01), 2017 },
             new object[] { 34, new DateTime(1982,10,01),2016 }
-
         };
 
         public IEnumerator<object[]> GetEnumerator()
